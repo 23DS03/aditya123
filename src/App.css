@@ -1,0 +1,169 @@
+.site-footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px 36px;
+    width: 100%;
+    padding: 22px 20px;
+    border-top: 1px solid rgba(250, 235, 215, .12);
+    color: rgba(250, 235, 215, .68);
+    text-align: center;
+}
+
+.site-footer p{
+    margin: 0;
+    background: transparent;
+    font-size: .85rem;
+    letter-spacing: .025em;
+}
+
+.site-footer span{
+    background: transparent;
+    color: aqua;
+    font-weight: 500;
+}
+
+.site-footer-links{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
+.site-footer-links a,
+.site-footer-links button{
+    padding: 4px 0;
+    border: 0;
+    border-bottom: 1px solid transparent;
+    background: transparent;
+    color: rgba(250, 235, 215, .78);
+    font: inherit;
+    font-size: .85rem;
+    text-decoration: none;
+    cursor: pointer;
+    transition: color .2s ease, border-color .2s ease;
+}
+
+.site-footer-links a:hover,
+.site-footer-links button:hover,
+.site-footer-links a:focus-visible,
+.site-footer-links button:focus-visible{
+    border-color: aqua;
+    color: aqua;
+    outline: none;
+}
+
+.info-dialog-backdrop{
+    position: fixed;
+    z-index: 1000;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, .76);
+}
+
+.info-dialog{
+    position: relative;
+    width: min(100%, 620px);
+    max-height: min(80vh, 680px);
+    overflow-y: auto;
+    padding: clamp(24px, 5vw, 40px);
+    border: 1px solid rgba(0, 255, 255, .45);
+    border-radius: 18px;
+    background: rgb(28, 27, 25);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, .6);
+    color: antiquewhite;
+}
+
+.info-dialog-eyebrow{
+    margin: 0 0 10px;
+    color: aqua;
+    font-size: .78rem;
+    font-weight: 700;
+    letter-spacing: .16em;
+    text-align: center;
+}
+
+.info-dialog h2{
+    margin: 0 0 24px;
+    color: antiquewhite;
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    text-align: center;
+}
+
+.info-dialog > p:not(.info-dialog-eyebrow),
+.info-dialog-faqs details p{
+    color: rgba(250, 235, 215, .82);
+    line-height: 1.7;
+}
+
+.info-dialog-faqs{
+    display: grid;
+    gap: 12px;
+}
+
+.info-dialog-faqs details{
+    padding: 16px 18px;
+    border: 1px solid rgba(0, 255, 255, .25);
+    border-radius: 12px;
+    background: rgb(11, 15, 19);
+}
+
+.info-dialog-faqs summary{
+    color: antiquewhite;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.info-dialog-faqs summary::marker{
+    color: aqua;
+}
+
+.info-dialog-faqs details p{
+    margin: 12px 0 0;
+}
+
+.info-dialog-close{
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    width: 36px;
+    height: 36px;
+    border: 0;
+    border-radius: 50%;
+    background: rgba(0, 255, 255, .1);
+    color: antiquewhite;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.info-dialog-close:hover,
+.info-dialog-close:focus-visible{
+    background: aqua;
+    color: rgb(11, 15, 19);
+    outline: 2px solid antiquewhite;
+}
+
+@media (max-width: 480px){
+    .site-footer{
+        flex-direction: column;
+        gap: 14px;
+        padding: 18px 16px;
+    }
+
+    .site-footer p{
+        font-size: .78rem;
+    }
+
+    .site-footer-links{
+        gap: 18px;
+    }
+
+    .site-footer-links a,
+    .site-footer-links button{
+        font-size: .78rem;
+    }
+}

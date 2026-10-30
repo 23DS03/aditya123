@@ -1,0 +1,325 @@
+#portfolio-root{
+    min-height: 100vh;
+    background: rgb(11, 15, 19);
+    color: antiquewhite;
+}
+
+#portfolio-root[data-theme="light"]{
+    background: #f4f6f8;
+    color: #24313c;
+}
+
+#portfolio-root[data-theme="light"] .site-nav{
+    background: rgba(244, 246, 248, .94);
+    box-shadow: 0 2px 18px rgba(28, 42, 52, .09);
+}
+
+#portfolio-root[data-theme="light"] .site-nav ul{
+    color: #253541;
+}
+
+#portfolio-root[data-theme="light"] .site-nav .mobilemenu{
+    background: rgba(244, 246, 248, .97);
+}
+
+#portfolio-root[data-theme="light"] .site-nav .mobilemenu a{
+    border-color: rgba(36, 49, 60, .14);
+}
+
+#portfolio-root[data-theme="light"] .theme-toggle{
+    border-color: rgba(36, 49, 60, .24);
+    background: #fff;
+    color: #24313c;
+}
+
+#portfolio-root[data-theme="light"] .ham{
+    background-color: #24313c;
+}
+
+#portfolio-root[data-theme="light"] .lefthome,
+#portfolio-root[data-theme="light"] .about-intro,
+#portfolio-root[data-theme="light"] .about-intro h1,
+#portfolio-root[data-theme="light"] .about-lead,
+#portfolio-root[data-theme="light"] .portfolio-section-heading h2,
+#portfolio-root[data-theme="light"] .live-writing-heading h2,
+#portfolio-root[data-theme="light"] .media-gallery-heading h2,
+#portfolio-root[data-theme="light"] .profile-caption h2{
+    color: #24313c;
+}
+
+#portfolio-root[data-theme="light"] .profile-caption p{
+    color: #52616d;
+}
+
+#portfolio-root[data-theme="light"] .profile-caption p,
+#portfolio-root[data-theme="light"] .about-lead,
+#portfolio-root[data-theme="light"] .about-copy,
+#portfolio-root[data-theme="light"] .portfolio-section-heading > p:last-child,
+#portfolio-root[data-theme="light"] .live-writing-heading > p:last-child,
+#portfolio-root[data-theme="light"] .media-gallery-heading > p:last-child{
+    color: #52616d;
+}
+
+#portfolio-root[data-theme="light"] .availability-label{
+    border-color: rgba(36, 49, 60, .15);
+    background: #fff;
+    color: #24313c;
+}
+
+#portfolio-root[data-theme="light"] .about-highlight{
+    border-color: rgba(36, 49, 60, .13);
+    background: rgba(255, 255, 255, .72);
+}
+
+#portfolio-root[data-theme="light"] .about-highlight-label{
+    color: #586874;
+}
+
+#portfolio-root[data-theme="light"] .rightabout .card.about-skill-card,
+#portfolio-root[data-theme="light"] .portfolio-info-card,
+#portfolio-root[data-theme="light"] .slider .card.project-card,
+#portfolio-root[data-theme="light"] .media-gallery-card{
+    border-color: rgba(36, 49, 60, .12);
+    background-color: #fff;
+    box-shadow: 0 12px 30px rgba(33, 49, 62, .1);
+}
+
+#portfolio-root[data-theme="light"] .portfolio-info-card h3,
+#portfolio-root[data-theme="light"] .media-gallery-slot-title{
+    color: #24313c;
+}
+
+#portfolio-root[data-theme="light"] .portfolio-info-card > p{
+    color: #52616d;
+}
+
+#portfolio-root[data-theme="light"] .portfolio-tags li{
+    background: rgba(168, 113, 28, .08);
+    color: #80530e;
+}
+
+#portfolio-root[data-theme="light"] .portfolio-card-heading span,
+#portfolio-root[data-theme="light"] .portfolio-info-card .portfolio-card-focus{
+    color: #80530e;
+}
+
+#portfolio-root[data-theme="light"] .live-writing-panel{
+    border-color: rgba(36, 49, 60, .14);
+    background: rgba(255, 255, 255, .68);
+    box-shadow: 0 24px 60px rgba(33, 49, 62, .1), inset 0 1px #fff;
+}
+
+#portfolio-root[data-theme="light"] .live-writing-editor,
+#portfolio-root[data-theme="light"] .live-writing-screen{
+    border-color: rgba(36, 49, 60, .13);
+    background: rgba(255, 255, 255, .82);
+}
+
+#portfolio-root[data-theme="light"] .live-writing-editor label,
+#portfolio-root[data-theme="light"] .live-writing-screen-header strong{
+    color: #24313c;
+}
+
+#portfolio-root[data-theme="light"] .live-writing-editor textarea{
+    border-color: rgba(36, 49, 60, .2);
+    background: #fff;
+    color: #24313c;
+}
+
+#portfolio-root[data-theme="light"] .live-writing-editor textarea::placeholder{
+    color: #75828b;
+}
+
+#portfolio-root[data-theme="light"] .live-writing-editor-footer,
+#portfolio-root[data-theme="light"] .live-writing-status,
+#portfolio-root[data-theme="light"] .live-writing-preview-label{
+    color: #61717e;
+}
+
+#portfolio-root[data-theme="light"] .live-writing-message{
+    border-color: rgba(36, 49, 60, .12);
+    background: rgba(236, 241, 244, .8);
+    color: #687985;
+}
+
+#portfolio-root[data-theme="light"] .live-writing-message.is-active{
+    color: #24313c;
+}
+
+#portfolio-root[data-theme="light"] .media-gallery-slot-empty{
+    color: #61717e;
+}
+
+#portfolio-root[data-theme="light"] .media-gallery-card-footer select{
+    border-color: rgba(36, 49, 60, .2);
+    background: #f4f6f8;
+    color: #24313c;
+}
+
+#portfolio-root[data-theme="light"] .media-gallery-local-note{
+    color: #61717e;
+}
+
+#portfolio-root[data-theme="light"] .project-card .title{
+    color: #fff2dc;
+}
+
+#portfolio-root[data-theme="light"] .project-card .card-description{
+    color: rgba(255, 248, 235, .9);
+}
+
+#portfolio-root[data-theme="light"] .project-details{
+    border-color: rgba(36, 49, 60, .16);
+    background: #fff;
+    color: #24313c;
+}
+
+#portfolio-root[data-theme="light"] .project-details p{
+    color: #52616d;
+}
+
+#portfolio-root[data-theme="light"] .project-details-close{
+    border-color: rgba(36, 49, 60, .22);
+    background: #f4f6f8;
+    color: #24313c;
+}
+
+#portfolio-root[data-theme="light"] .hire-dialog,
+#portfolio-root[data-theme="light"] .about-dialog{
+    border-color: rgba(36, 49, 60, .2);
+    background: #fff;
+    color: #24313c;
+}
+
+#portfolio-root[data-theme="light"] .hire-dialog h2,
+#portfolio-root[data-theme="light"] .about-dialog h2{
+    color: #24313c;
+}
+
+#portfolio-root[data-theme="light"] .hire-dialog-close,
+#portfolio-root[data-theme="light"] .about-dialog-close{
+    border-color: rgba(36, 49, 60, .22);
+    background: #f4f6f8;
+    color: #24313c;
+}
+
+#portfolio-root[data-theme="light"] .about-dialog > p:last-child{
+    color: #52616d;
+}
+
+#portfolio-root[data-theme="light"] .contact-key-details,
+#portfolio-root[data-theme="light"] .rightcontact form{
+    border-color: rgba(36, 49, 60, .14);
+    background-color: #fff;
+    color: #24313c;
+}
+
+#portfolio-root[data-theme="light"] .contact-key-details > a,
+#portfolio-root[data-theme="light"] .contact-detail-actions a,
+#portfolio-root[data-theme="light"] .professional-links a{
+    color: #24313c;
+}
+
+#portfolio-root[data-theme="light"] .rightcontact form input:not([type="submit"]),
+#portfolio-root[data-theme="light"] .rightcontact textarea{
+    border-color: #7f929f;
+    background-color: #f7f9fa;
+    color: #24313c;
+}
+
+#portfolio-root[data-theme="light"] .rightcontact form input:not([type="submit"])::placeholder,
+#portfolio-root[data-theme="light"] .rightcontact textarea::placeholder{
+    color: #61717e;
+}
+
+#portfolio-root[data-theme="light"] #btn{
+    border-color: rgb(165, 95, 17);
+    background: rgb(202, 124, 21);
+    color: #fff;
+}
+
+#portfolio-root[data-theme="light"] #btn:hover{
+    border-color: rgb(139, 76, 10);
+    background: rgb(175, 99, 12);
+    color: #fff;
+}
+
+#portfolio-root[data-theme="light"] .site-footer{
+    border-color: rgba(36, 49, 60, .15);
+    color: #52616d;
+}
+
+#portfolio-root[data-theme="light"] .site-footer-links a,
+#portfolio-root[data-theme="light"] .site-footer-links button{
+    color: #394b58;
+}
+
+#portfolio-root[data-theme="light"] .info-dialog,
+#portfolio-root[data-theme="light"] .info-dialog-faqs details{
+    background: #fff;
+    color: #24313c;
+}
+
+#portfolio-root[data-theme="light"] .info-dialog h2,
+#portfolio-root[data-theme="light"] .info-dialog-faqs summary{
+    color: #24313c;
+}
+
+#portfolio-root[data-theme="light"] .info-dialog > p:not(.info-dialog-eyebrow),
+#portfolio-root[data-theme="light"] .info-dialog-faqs details p{
+    color: #52616d;
+}
+
+#portfolio-root[data-theme="light"] .portfolio-chat-panel{
+    border-color: rgba(36, 49, 60, .18);
+    background: rgba(255, 255, 255, .98);
+    color: #24313c;
+}
+
+#portfolio-root[data-theme="light"] .portfolio-chat-header{
+    border-color: rgba(36, 49, 60, .12);
+    background: #f2f5f7;
+}
+
+#portfolio-root[data-theme="light"] .portfolio-chat-heading h2{
+    color: #24313c;
+}
+
+#portfolio-root[data-theme="light"] .portfolio-chat-heading p{
+    color: #61717e;
+}
+
+#portfolio-root[data-theme="light"] .portfolio-chat-close,
+#portfolio-root[data-theme="light"] .portfolio-chat-input input{
+    color: #24313c;
+}
+
+#portfolio-root[data-theme="light"] .portfolio-chat-message--assistant .portfolio-chat-bubble{
+    border-color: rgba(36, 49, 60, .12);
+    background: #eef2f4;
+    color: #24313c;
+}
+
+#portfolio-root[data-theme="light"] .portfolio-chat-suggestions button{
+    border-color: rgba(36, 49, 60, .18);
+    background: #fff;
+    color: #394b58;
+}
+
+#portfolio-root[data-theme="light"] .portfolio-chat-input{
+    border-color: rgba(36, 49, 60, .18);
+    background: #f4f6f8;
+}
+
+#portfolio-root[data-theme="light"] .portfolio-chat-input input::placeholder{
+    color: #71808b;
+}
+
+@media (prefers-reduced-motion: no-preference){
+    #portfolio-root,
+    #portfolio-root .site-nav,
+    #portfolio-root .portfolio-info-card,
+    #portfolio-root .portfolio-chat-panel{
+        transition: background-color .25s ease, color .25s ease, border-color .25s ease;
+    }
+}

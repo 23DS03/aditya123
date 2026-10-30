@@ -1,0 +1,251 @@
+#projects{
+    position: relative;
+    isolation: isolate;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    min-height: 80svh;
+    gap: clamp(18px, 3vh, 30px);
+    padding: 100px 0 56px;
+    overflow: hidden;
+}
+
+#projects[data-video-background="true"]::before{
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(180deg, rgba(7, 11, 14, .48), rgba(7, 11, 14, .72));
+    content: "";
+    pointer-events: none;
+}
+
+.projects-background-video{
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+}
+
+.slider{
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: stretch;
+    width: min(100%, 1360px);
+    gap: clamp(16px, 2.5vw, 30px);
+    padding: 24px clamp(20px, 5vw, 64px);
+}
+
+.slider .card.project-card{
+    width: 100%;
+    min-width: 0;
+    height: 410px;
+    border: 1px solid rgba(250, 235, 215, .16);
+    border-radius: 20px;
+    background: #151b1f;
+    box-shadow: 0 16px 38px rgba(0, 0, 0, .32);
+    filter: none;
+    white-space: normal;
+    transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease;
+}
+
+.slider .card.project-card:hover{
+    transform: translateY(-6px);
+    border-color: rgba(235, 183, 104, .72);
+    box-shadow: 0 22px 46px rgba(0, 0, 0, .44);
+}
+
+.project-card .hovercard{
+    inset: 16px 16px auto;
+    display: grid;
+    height: 58%;
+    place-items: center;
+    padding: 12px;
+    transform: none;
+    opacity: 1;
+    border: 1px solid rgba(250, 235, 215, .1);
+    border-radius: 13px;
+    background: rgba(5, 9, 12, .68);
+    filter: none;
+    transition: transform 350ms ease, border-color 220ms ease;
+}
+
+.project-card .hovercard img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 7px;
+    object-fit: contain;
+}
+
+.project-card:hover .hovercard,
+.project-card:focus-visible .hovercard{
+    transform: scale(1.025);
+    border-color: rgba(235, 183, 104, .36);
+}
+
+.project-card .card-copy{
+    position: absolute;
+    inset: auto 0 0;
+    z-index: 1;
+    display: flex;
+    min-height: 36%;
+    flex-direction: column;
+    justify-content: center;
+    gap: 9px;
+    padding: 18px 22px 22px;
+    background: linear-gradient(180deg, transparent, rgba(7, 11, 14, .97) 28%);
+    text-align: left;
+}
+
+.project-card .title{
+    position: static;
+    display: block;
+    transform: none;
+    color: #fff2dc;
+    font-size: clamp(1.1rem, 2vw, 1.45rem);
+    font-weight: 600;
+    line-height: 1.3;
+    white-space: normal;
+}
+
+.project-card .card-description{
+    display: block;
+    color: rgba(255, 248, 235, .78);
+    font-size: .88rem;
+    line-height: 1.55;
+}
+
+.slider .card.project-card:hover .title,
+.slider .card.project-card:focus-visible .title{
+    transform: none;
+    opacity: 1;
+}
+
+#pro{
+    font-size: clamp(2rem, 5vw, 4rem);
+    text-align: center;
+    background: linear-gradient(to right, rgba(231, 161, 10, 0.726), hsl(0, 12%, 92%));
+    background-clip: text;
+    color: transparent;
+}
+
+.project-details-backdrop{
+    position: fixed;
+    inset: 0;
+    z-index: 30;
+    display: grid;
+    place-items: center;
+    padding: 24px;
+    background: rgba(0, 0, 0, .78);
+}
+
+.project-details{
+    position: relative;
+    width: min(100%, 520px);
+    padding: 32px;
+    border: 1px solid rgba(0, 255, 255, .55);
+    border-radius: 12px;
+    background: #11191e;
+    color: #f4f4f4;
+    box-shadow: 0 12px 48px rgba(0, 0, 0, .5);
+}
+
+.project-details h2{
+    margin: 24px 0 20px;
+    color: aqua;
+    font-size: clamp(22px, 5vw, 28px);
+}
+
+.project-details h3{
+    margin-bottom: 8px;
+    color: #e7a10a;
+    font-size: 18px;
+}
+
+.project-details p{
+    color: #d5dadd;
+    line-height: 1.7;
+}
+
+.project-details-close{
+    display: block;
+    margin-left: auto;
+    padding: 7px 12px;
+    border: 1px solid rgba(255, 255, 255, .45);
+    border-radius: 4px;
+    background: #11191e;
+    color: white;
+    cursor: pointer;
+}
+
+.project-details-close:focus-visible{
+    outline: 2px solid aqua;
+    outline-offset: 3px;
+}
+
+@media (max-width: 600px){
+    #projects{
+        padding-top: 88px;
+    }
+
+    .projects-background-video{
+        position: fixed;
+        inset: 0;
+        width: 100vw;
+        height: 100vh;
+        height: 100dvh;
+        object-fit: cover;
+        object-position: center;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 200ms ease;
+    }
+
+    #projects[data-video-active="true"] .projects-background-video{
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .slider{
+        grid-template-columns: minmax(0, 1fr);
+        width: min(100%, 440px);
+        gap: 18px;
+        padding: 20px 18px;
+    }
+
+    .slider .card.project-card{
+        height: clamp(320px, 92vw, 380px);
+        border-radius: 17px;
+    }
+
+    .project-card .hovercard{
+        inset: 12px 12px auto;
+        height: 55%;
+        padding: 10px;
+    }
+
+    .project-card .card-copy{
+        min-height: 40%;
+        gap: 8px;
+        padding: 16px 17px 18px;
+    }
+
+    .project-card .title{
+        font-size: 1.05rem;
+    }
+
+    .project-card .card-description{
+        font-size: .82rem;
+    }
+
+    .project-details{
+        max-height: calc(100svh - 32px);
+        overflow-y: auto;
+        padding: 24px 20px;
+    }
+}
