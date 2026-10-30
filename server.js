@@ -1,5 +1,6 @@
 import { existsSync } from "node:fs";
 import { createServer } from "node:http";
+import { resolve } from "node:path";
 import { loadEnvFile } from "node:process";
 import { fileURLToPath } from "node:url";
 
@@ -112,13 +113,26 @@ function sendJson(response, statusCode, payload) {
 }
 
 async function readJsonBody(request) {
-  let body = "";
-  for await (const chunk of request) {
-    body += chunk;
-    if (Buffer.byteLength(body) > maxBodyBytes) {
+  let body = typeof request.body === "string" ? request.body : "";
+
+  if (request.body !== undefined && typeof request.body !== "string") {
+    if (Buffer.byteLength(JSON.stringify(request.body)) > maxBodyBytes) {
       const error = new Error("Request is too large.");
       error.statusCode = 413;
       throw error;
+    }
+
+    return request.body;
+  }
+
+  if (request.body === undefined) {
+    for await (const chunk of request) {
+      body += chunk;
+      if (Buffer.byteLength(body) > maxBodyBytes) {
+        const error = new Error("Request is too large.");
+        error.statusCode = 413;
+        throw error;
+      }
     }
   }
 
@@ -169,7 +183,7 @@ function validateChatRequest(body) {
 async function handleChat(request, response) {
   if (!isGroqConfigured) {
     sendJson(response, 503, {
-      error: "Groq is not configured. Copy .env.example to .env, add GROQ_API_KEY, and restart the API server.",
+      error: "Groq is not configured. Set GROQ_API_KEY in the API server environment and restart the server.",
     });
     return;
   }
@@ -267,7 +281,7 @@ async function handleChat(request, response) {
   }
 }
 
-const server = createServer(async (request, response) => {
+export async function handleApiRequest(request, response) {
   const requestUrl = new URL(request.url, `http://${request.headers.host || "localhost"}`);
   const requestOrigin = request.headers.origin;
 
@@ -305,22 +319,26 @@ const server = createServer(async (request, response) => {
   }
 
   await handleChat(request, response);
-});
+}
 
-server.listen(port, () => {
-  console.log(`Portfolio AI API listening on http://127.0.0.1:${port}`);
-  if (!isGroqConfigured) {
-    console.warn("GROQ_API_KEY is missing or still a placeholder; chat requests will return a configuration error.");
-  }
-});
+if (process.argv[1] && fileURLToPath(import.meta.url) === resolve(process.argv[1])) {
+  const server = createServer(handleApiRequest);
 
-server.on("error", (error) => {
-  if (error.code === "EADDRINUSE") {
-    console.error(`Cannot start the Portfolio AI API: port ${port} is already in use. Stop the other server or configure a free API_PORT.`);
+  server.listen(port, () => {
+    console.log(`Portfolio AI API listening on http://127.0.0.1:${port}`);
+    if (!isGroqConfigured) {
+      console.warn("GROQ_API_KEY is missing or still a placeholder; chat requests will return a configuration error.");
+    }
+  });
+
+  server.on("error", (error) => {
+    if (error.code === "EADDRINUSE") {
+      console.error(`Cannot start the Portfolio AI API: port ${port} is already in use. Stop the other server or configure a free API_PORT.`);
+      process.exitCode = 1;
+      return;
+    }
+
+    console.error(`Cannot start the Portfolio AI API: ${error.message}`);
     process.exitCode = 1;
-    return;
-  }
-
-  console.error(`Cannot start the Portfolio AI API: ${error.message}`);
-  process.exitCode = 1;
-});
+  });
+}
