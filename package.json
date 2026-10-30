@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "node dev.js",
     "dev:api": "node server.js",
-    "build": "vite build",
+    "build": "node ./node_modules/vite/bin/vite.js build",
     "lint": "oxlint",
     "preview": "vite preview"
   },
