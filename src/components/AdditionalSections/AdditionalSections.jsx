@@ -8,7 +8,7 @@ const skillGroups = [
   },
   {
     title: "Programming",
-    items: ["JavaScript", "Java", "Python", "C++"],
+    items: ["JavaScript", "Python", "C++"],
     description: "Applying programming fundamentals and problem-solving across different projects.",
   },
   {

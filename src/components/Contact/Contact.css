@@ -113,12 +113,12 @@
     }
 
     .contact-keyboard{
-        width: min(100%, 600px);
+        width: min(90%, 450px);
     }
 
     .contact-keyboard img{
-        width: min(100%, 560px);
-        height: min(95svh, 680px);
+        width: min(90%, 450px);
+        height: min(90svh, 680px);
         object-fit: cover;
         object-position: center 42%;
         border: 1px solid rgba(255, 255, 255, .16);

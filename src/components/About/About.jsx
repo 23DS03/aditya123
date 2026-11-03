@@ -25,7 +25,7 @@ const expertise = [
     image: C,
     description: "A thoughtful approach to problem-solving, algorithms, and core programming.",
     detail:
-      "I practice data structures and algorithms to strengthen my problem-solving skills, with experience using C++, Java, and Python.",
+      "I practice data structures and algorithms to strengthen my problem-solving skills, with experience using C++",
     ariaLabel: "Explore data structures and algorithms skills",
   },
   {
@@ -87,7 +87,7 @@ function About() {
           specializing in Data Science.
         </p>
         <p className="about-copy">
-          I enjoy turning ideas into thoughtful web experiences and breaking
+          turning ideas into thoughtful web experiences and breaking
           challenging problems into clear, practical solutions. My interests
           span full-stack development, problem-solving, and data.
         </p>

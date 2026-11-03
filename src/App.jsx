@@ -64,7 +64,7 @@ export default function App() {
                 </details>
                 <details>
                   <summary>How can I ask about a project or collaboration?</summary>
-                  <p>Send a short message through the contact form with a few details. I’ll follow up using the email address you provide.</p>
+                  <p>Send a short message through the contact form with a few details. I willfollow up using the email address you provide.</p>
                 </details>
               </div>
             </>

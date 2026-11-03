@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 import "./Home.css"
-import adityaAi from "../../assets/adityaAi.jpeg"
+import adityahome from "../../assets/adityahome.jpeg"
 import { TypeAnimation } from "react-type-animation";
 import {useGSAP} from "@gsap/react"
 import gsap from "gsap";
@@ -96,7 +96,7 @@ useGSAP(()=>{
         <div className="righthome">
           <div className="profile-showcase">
             <div className="profile-portrait">
-              <img src={adityaAi} alt="Portrait of Aditya Pathak" />
+              <img src={adityahome} alt="Portrait of Aditya Pathak" />
             </div>
             <div className="profile-caption">
               <h2>Aditya Pathak</h2>
@@ -120,8 +120,7 @@ useGSAP(()=>{
                 setIsHireDialogOpen(false)
                 hireButtonRef.current?.focus()
               }
-            }}
-          >
+            }}          >
             <section
               className="hire-dialog"
               role="dialog"
@@ -141,18 +140,15 @@ useGSAP(()=>{
               </button>
               <p className="hire-dialog-eyebrow">SOFTWARE ENGINEER</p>
               <h2 id="hire-dialog-title">A little about me</h2>
-              <ol>
-                <li>I am a Computer Science and Engineering student specializing in Data Science.</li>
-                <li>I build web experiences with the MERN stack: MongoDB, Express, React, and Node.js.</li>
-                <li>I work with Java, JavaScript, and Python to solve problems across different areas.</li>
-                <li>I practice data structures and algorithms in Java to strengthen my problem-solving skills.</li>
-                <li>I enjoy turning data into useful insights through data analytics.</li>
-                <li>I bring a data-focused perspective to software design and development.</li>
-                <li>I like breaking complex challenges into clear, manageable steps.</li>
-                <li>I am building my skills through hands-on learning and practical projects.</li>
-                <li>I value readable, maintainable code and thoughtful user experiences.</li>
-                <li>I communicate in Hindi and English and am ready to contribute to a collaborative team.</li>
-              </ol>
+              <p>A motivated Computer Science and Engineering specializing
+                 in Data Science, with a strong foundation in programming,
+                 full-stack web development, and analytical problem-solving.
+                 Experienced in building dynamic and responsive web applications
+                 using the MERN stack (MongoDB, Express.js, React.js, and Node.js),
+                 with working knowledge of JavaScript, and Python. Actively 
+                 strengthening problem-solving skills through Data Structures and Algorithms
+                 in C++ while exploring data analytics to extract meaningful insights from 
+                 complex datasets. uting to innovative technology-driven solutions.</p>
             </section>
           </div>,
           document.body
