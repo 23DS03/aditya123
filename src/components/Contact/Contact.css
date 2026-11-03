@@ -17,7 +17,7 @@
 .rightcontact{
     flex: 1 1 50%;
     min-width: 0;
-    min-height: 660px;
+    min-height: 760px;
 }
 
 .leftcontact{
@@ -32,7 +32,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: min(96%, 620px);
+    width: min(100%, 900px);
 }
 
 .contact-keyboard img{
@@ -113,12 +113,12 @@
     }
 
     .contact-keyboard{
-        width: min(90%, 450px);
+        width: min(90%, 900px);
     }
 
     .contact-keyboard img{
-        width: min(90%, 450px);
-        height: min(90svh, 680px);
+        width: min(80%, 900px);
+        height: min(90svh, 900px);
         object-fit: cover;
         object-position: center 42%;
         border: 1px solid rgba(255, 255, 255, .16);
@@ -142,8 +142,8 @@
     align-items: center;
     justify-content: center;
     gap: 20px;
-    width: min(100%, 480px);
-    min-height: 440px;
+    width: min(93%, 550px);
+    min-height: 640px;
     padding: clamp(20px, 4vw, 36px);
     border-radius: 20px;
     background-color: rgb(28, 27, 25);
@@ -151,7 +151,7 @@
 }
 
 .rightcontact form:hover{
-    filter: drop-shadow(2px 2px 5px aqua);
+    filter: drop-shadow(2px 2px 5px pink);
 }
 
 .rightcontact form input:not([type="submit"]),
@@ -237,11 +237,11 @@
     }
 
     .contact-keyboard{
-        width: min(100%, 1000px);
+        width: min(90%, 800px);
     }
 
     .contact-keyboard img{
-        max-height: 72svh;
+        max-height: 70svh;
     }
 
     .rightcontact{
@@ -291,7 +291,7 @@
     }
 
     .contact-keyboard{
-        width: min(100%, 1000px);
+        width: min(80%, 850px);
     }
 
     .rightcontact form{
