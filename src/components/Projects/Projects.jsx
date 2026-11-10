@@ -33,7 +33,7 @@ function Projects() {
     {
       title: 'E-Commerce',
       image: eCommerce,
-      link: 'https://e-commerce4567.netlify.app/',
+      link: 'https://shopzone-diz7.onrender.com',
       description: 'An online shopping experience built around browsing products and exploring a digital storefront.',
       implementation: 'Explore the E-Commerce portfolio project and its online shopping experience.',
     },
