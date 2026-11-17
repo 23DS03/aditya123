@@ -1,6 +1,12 @@
 #home{
-    display: flex;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-rows: auto auto;
+    grid-template-areas:
+        "copy portrait"
+        "copy terminal";
     align-items: center;
+    align-content: center;
     width: 100%;
     min-height: 100svh;
     gap: clamp(16px, 4vw, 56px);
@@ -10,21 +16,21 @@
 
 .lefthome,
 .righthome{
-    flex: 1 1 50%;
     min-width: 0;
-    min-height: calc(100svh - 140px);
     display: flex;
     align-items: center;
 }
 
 .lefthome{
+    grid-area: copy;
+    min-height: calc(100svh - 140px);
     justify-content: flex-start;
     color: antiquewhite;
 }
 
 .righthome{
+    grid-area: portrait;
     justify-content: center;
-    
 }
 
 .profile-showcase{
@@ -72,37 +78,118 @@
     box-shadow: 0 18px 52px rgba(202, 124, 21, 0.32);
 }
 
-.profile-caption h2{
-    margin-bottom: 5px;
-    color: antiquewhite;
-    font-size: clamp(1.2rem, 2.4vw, 1.5rem);
+.profile-terminal{
+    grid-area: terminal;
+    justify-self: center;
+    width: min(100%, 440px);
+    overflow: hidden;
+    border: 1px solid rgba(103, 217, 168, .3);
+    border-radius: 14px;
+    background: rgba(8, 15, 20, .96);
+    color: #e7efec;
+    text-align: left;
+    box-shadow: 0 16px 42px rgba(0, 0, 0, .28), 0 0 28px rgba(103, 217, 168, .08);
+}
+
+.terminal-titlebar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    min-height: 38px;
+    padding: 8px 14px;
+    border-bottom: 1px solid rgba(220, 236, 229, .1);
+    background: rgba(255, 255, 255, .035);
+}
+
+.terminal-controls{
+    position: absolute;
+    left: 14px;
+    display: inline-flex;
+    gap: 6px;
+}
+
+.terminal-controls span{
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+}
+
+.terminal-controls span:nth-child(1){
+    background: #ff6b66;
+}
+
+.terminal-controls span:nth-child(2){
+    background: #f5c451;
+}
+
+.terminal-controls span:nth-child(3){
+    background: #53ce83;
+}
+
+.terminal-window-name{
+    color: #879995;
+    font-family: "Cascadia Code", "SFMono-Regular", Consolas, monospace;
+    font-size: .68rem;
+}
+
+.terminal-body{
+    padding: 20px 22px 22px;
+    font-family: "Cascadia Code", "SFMono-Regular", Consolas, monospace;
+}
+
+.terminal-command{
+    margin: 0 0 15px;
+    color: #bdc9c5;
+    font-size: .72rem;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+.terminal-prompt,
+.terminal-key{
+    color: #67d9a8;
+}
+
+.terminal-prompt{
+    margin-right: 7px;
+}
+
+.terminal-body h2{
+    margin: 0 0 14px;
+    color: #f1f7f4;
+    font-size: clamp(1.12rem, 2.2vw, 1.4rem);
     font-weight: 600;
     overflow-wrap: anywhere;
 }
 
-.profile-caption p{
-    color: rgba(250, 235, 215, 0.72);
-    font-size: 0.92rem;
-    line-height: 1.5;
+.terminal-field{
+    display: grid;
+    grid-template-columns: 54px minmax(0, 1fr);
+    gap: 12px;
+    margin: 9px 0 0;
+    color: #d3ddda;
+    font-size: .76rem;
+    line-height: 1.6;
 }
 
-.profile-caption p.profile-summary{
-    max-width: 32ch;
-    margin: 8px auto 0;
-    font-size: 0.82rem;
+.terminal-key{
+    font-weight: 600;
 }
 
-.availability-label{
+.terminal-value{
+    min-width: 0;
+}
+
+.terminal-about .terminal-value{
+    color: #b7c5c0;
+}
+
+.terminal-status .terminal-value{
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    margin-top: 12px;
-    padding: 7px 12px;
-    border: 1px solid rgba(250, 235, 215, 0.16);
-    border-radius: 999px;
-    background-color: rgb(20, 25, 29);
-    color: antiquewhite;
-    font-size: 0.78rem;
+    color: #9ee7bb;
 }
 
 .availability-dot{
@@ -135,20 +222,63 @@
     font-size: 1em;
 }
 
-.homedetails button{
+.home-actions{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
     margin-top: 20px;
-    padding: 10px 20px;
+}
+
+.home-actions button,
+.home-actions .resume-download{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    width: 140px;
+    height: 48px;
+    padding: 0 20px;
     border: 2px solid rgb(202, 124, 21);
-    border-radius: 20px;
+    border-radius: 999px;
+    font: inherit;
+    font-size: 0.9em;
+    font-weight: 600;
+    line-height: 1;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+.home-actions button{
     background-color: rgb(202, 124, 21);
     color: antiquewhite;
-    transition: all 0.3s;
     cursor: pointer;
 }
 
-.homedetails button:hover{
+.home-actions button:hover{
     background-color: transparent;
     color: rgb(202, 124, 21);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(202, 124, 21, 0.2);
+}
+
+.resume-download{
+    background-color: transparent;
+    color: antiquewhite;
+}
+
+.resume-download:hover,
+.resume-download:focus-visible{
+    background-color: rgb(202, 124, 21);
+    color: antiquewhite;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(202, 124, 21, 0.2);
+}
+
+.home-actions button:focus-visible,
+.resume-download:focus-visible{
+    outline: 3px solid rgba(202, 124, 21, .5);
+    outline-offset: 3px;
 }
 
 .hire-dialog-backdrop{
@@ -227,10 +357,11 @@
 
 @media (max-width: 750px){
     #home{
-        flex-direction: column-reverse;
+        display: flex;
+        flex-direction: column;
         justify-content: center;
-        gap: 18px;
-        padding: 100px 20px 48px;
+        gap: 40px;
+        padding: 100px 25px 56px;
     }
 
     .lefthome,
@@ -242,34 +373,41 @@
         text-align: center;
     }
 
+    .righthome{
+        order: 0;
+    }
+
+    .lefthome{
+        order: 1;
+    }
+
+    .profile-terminal{
+        order: 2;
+    }
+
     .profile-showcase{
-        gap: 14px;
+        gap: 40px;
     }
 
     .profile-portrait{
-        width: clamp(150px, 42vw, 210px);
+        width: clamp(180px, 50vw, 240px);
     }
 
-    .profile-caption h2{
-        font-size: 1.25rem;
+    .terminal-body{
+        padding: 18px 18px 20px;
     }
 
-    .profile-caption p{
-        font-size: 0.82rem;
-    }
-
-    .profile-caption p.profile-summary{
-        max-width: 30ch;
-        font-size: 0.78rem;
-    }
-
-    .availability-label{
-        margin-top: 8px;
-        font-size: 0.72rem;
+    .terminal-field{
+        font-size: .72rem;
     }
 
     .line3{
         min-height: 1.4em;
+    }
+
+    .home-actions{
+        justify-content: center;
+        gap: 40px;
     }
 }
 
@@ -289,11 +427,15 @@
 
 @media (max-width: 380px){
     #home{
-        padding-right: 16px;
-        padding-left: 16px;
+        padding-right: 25px;
+        padding-left: 25px;
     }
 
     .profile-portrait{
-        width: min(50vw, 170px);
+        width: min(58vw, 190px);
+    }
+
+    .terminal-body{
+        padding: 16px;
     }
 }

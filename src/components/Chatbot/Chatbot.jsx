@@ -24,8 +24,7 @@ const suggestedQuestions = [
   "explore my work"
 ];
 
-function Chatbot() {
-  const [isOpen, setIsOpen] = useState(false);
+function Chatbot({ isOpen, onOpen, onClose }) {
   const [draft, setDraft] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [messages, setMessages] = useState([
@@ -46,14 +45,14 @@ function Chatbot() {
     inputRef.current?.focus();
     const handleKeyDown = (event) => {
       if (event.key === "Escape") {
-        setIsOpen(false);
+        onClose();
         toggleButtonRef.current?.focus();
       }
     };
 
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [isOpen]);
+  }, [isOpen, onClose]);
 
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth", block: "end" });
@@ -151,7 +150,7 @@ function Chatbot() {
               type="button"
               aria-label="Close chat"
               onClick={() => {
-                setIsOpen(false);
+                onClose();
                 toggleButtonRef.current?.focus();
               }}
             >
@@ -232,7 +231,7 @@ function Chatbot() {
         aria-label={isOpen ? "Close portfolio assistant" : "Open portfolio assistant"}
         aria-expanded={isOpen}
         aria-controls="portfolio-chat-panel"
-        onClick={() => setIsOpen((open) => !open)}
+        onClick={() => (isOpen ? onClose() : onOpen())}
       >
         {isOpen ? (
           <svg viewBox="0 0 24 24" aria-hidden="true">

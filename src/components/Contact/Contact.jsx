@@ -5,11 +5,9 @@ import gsap from "gsap";
 import { ScrollTrigger } from 'gsap/all'
 gsap.registerPlugin(ScrollTrigger)
 
-const resumeUrl = import.meta.env.VITE_RESUME_URL
 const linkedinUrl = import.meta.env.VITE_LINKEDIN_URL
 const githubUrl = import.meta.env.VITE_GITHUB_URL
 const instagramUrl = import.meta.env.VITE_INSTAGRAM_URL
-const resumeHref = resumeUrl || 'mailto:pathakaditya6266@gmail.com?subject=Resume%20request'
 
 function Contact() {
     useGSAP(()=>{
@@ -91,17 +89,6 @@ function Contact() {
                   <path d="M12 .7a11.5 11.5 0 0 0-3.637 22.41c.575.106.786-.25.786-.555 0-.274-.01-1.001-.015-1.965-3.2.696-3.877-1.543-3.877-1.543-.523-1.33-1.278-1.685-1.278-1.685-1.045-.715.08-.7.08-.7 1.155.081 1.763 1.186 1.763 1.186 1.027 1.76 2.694 1.251 3.35.956.104-.744.402-1.252.731-1.54-2.554-.29-5.24-1.278-5.24-5.69 0-1.257.45-2.284 1.186-3.09-.119-.29-.514-1.46.113-3.045 0 0 .967-.31 3.168 1.18a11.02 11.02 0 0 1 5.766 0c2.2-1.49 3.165-1.18 3.165-1.18.63 1.585.235 2.755.116 3.045.739.806 1.184 1.833 1.184 3.09 0 4.423-2.69 5.397-5.252 5.681.413.356.78 1.056.78 2.128 0 1.536-.014 2.775-.014 3.152 0 .308.207.666.79.553A11.5 11.5 0 0 0 12 .7Z" />
                 </svg>
                 <span>GitHub</span>
-              </a>
-              <a
-                href={resumeHref}
-                download={resumeUrl?.startsWith('/') ? true : undefined}
-                target={resumeUrl?.startsWith('http') ? '_blank' : undefined}
-                rel={resumeUrl?.startsWith('http') ? 'noreferrer' : undefined}
-              >
-                <svg className="professional-link-icon resume-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Zm0 1.5L18.5 8H14ZM6 20V4h6v5h6v11Zm2-8h8v1.5H8Zm0 3h8v1.5H8Z" />
-                </svg>
-                <span>{resumeUrl ? 'Resume' : 'Request Resume'}</span>
               </a>
               <a href={instagramUrl} target="_blank" rel="noreferrer">
                 <svg className="professional-link-icon instagram-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import { useState } from 'react'
 import "./Projects.css"
 import Card from '../Card/Card'
 import jarvis from '../../assets/jarvis.png'
@@ -26,9 +26,6 @@ function getProjectHref(link) {
 
 function Projects() {
   const [activeProject, setActiveProject] = useState(null)
-  const [backgroundVideoActive, setBackgroundVideoActive] = useState(false)
-  const projectsSectionRef = useRef(null)
-  const backgroundVideoRef = useRef(null)
   const projects = [
     {
       title: 'E-Commerce',
@@ -74,30 +71,6 @@ function Projects() {
     },
   ]
 
-  useEffect(() => {
-    const section = projectsSectionRef.current
-    const video = backgroundVideoRef.current
-
-    if (!section || !video) return undefined
-
-    const observer = new IntersectionObserver(([entry]) => {
-      setBackgroundVideoActive(entry.isIntersecting)
-
-      if (entry.isIntersecting) {
-        video.play().catch((error) => {
-          if (error.name !== 'AbortError') {
-            console.error('Unable to play the Projects background video.', error)
-          }
-        })
-      } else {
-        video.pause()
-      }
-    }, { threshold: 0.1 })
-
-    observer.observe(section)
-    return () => observer.disconnect()
-  }, [])
-
   useGSAP(()=>{
    gsap.from("#pro",{
     y:100,
@@ -130,18 +103,16 @@ function Projects() {
   return (
     <div
       id="projects"
-      ref={projectsSectionRef}
-      data-video-background="true"
-      data-video-active={backgroundVideoActive}
     >
        <video
-         ref={backgroundVideoRef}
          className="projects-background-video"
-         src="/projects-backgroun.webm"
+         src={`${import.meta.env.BASE_URL}16552246_3840_2160_60fps.mp4`}
+         autoPlay
          muted
          loop
          playsInline
          aria-hidden="true"
+         tabIndex={-1}
        />
        <h1 id ="pro">Project Library</h1>
        <div className="slider">

@@ -10,25 +10,24 @@
     gap: clamp(18px, 3vh, 30px);
     padding: 100px 0 56px;
     overflow: hidden;
-}
-
-#projects[data-video-background="true"]::before{
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-    background: linear-gradient(180deg, rgba(7, 11, 14, .48), rgba(7, 11, 14, .72));
-    content: "";
-    pointer-events: none;
+    background: transparent;
 }
 
 .projects-background-video{
     position: absolute;
     inset: 0;
-    z-index: -2;
+    z-index: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
+    filter: brightness(.35);
     pointer-events: none;
+}
+
+#projects > #pro,
+#projects > .slider{
+    position: relative;
+    z-index: 1;
 }
 
 .slider{
@@ -190,25 +189,16 @@
 
 @media (max-width: 600px){
     #projects{
+        min-height: 100svh;
         padding-top: 88px;
     }
 
     .projects-background-video{
-        position: fixed;
-        inset: 0;
-        width: 100vw;
-        height: 100vh;
-        height: 100dvh;
+        width: 100%;
+        height: 100%;
         object-fit: cover;
         object-position: center;
-        opacity: 0;
-        visibility: hidden;
-        transition: opacity 200ms ease;
-    }
-
-    #projects[data-video-active="true"] .projects-background-video{
-        opacity: 1;
-        visibility: visible;
+        filter: brightness(.3);
     }
 
     .slider{

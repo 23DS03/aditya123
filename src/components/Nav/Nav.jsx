@@ -3,7 +3,7 @@ import './Nav.css'
 import {Link} from 'react-scroll'
 import {useGSAP} from '@gsap/react' 
 import gsap from 'gsap'
-function Nav({ theme, onThemeChange }) {
+function Nav({ theme, onThemeChange, onOpenChat }) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const closeMobileMenu = () => setIsMobileMenuOpen(false)
 
@@ -34,7 +34,11 @@ function Nav({ theme, onThemeChange }) {
             <Link to="education" activeClass="active" spy={true} smooth={true} duration={100}><li>Education</li></Link>
             <Link to="projects" activeClass="active" spy={true} smooth={true} duration={100}><li>Projects</li></Link>
             <Link to="contact" activeClass="active" spy={true} smooth={true} duration={100}><li>Contact</li></Link>
-            
+            <li>
+              <button className="nav-chat-button" type="button" onClick={onOpenChat}>
+                Chat with us
+              </button>
+            </li>
         </ul>
         <button
           className={isMobileMenuOpen ? "hamburger activemenu" : "hamburger"}
@@ -61,6 +65,18 @@ function Nav({ theme, onThemeChange }) {
             <Link to="education" activeClass="active" spy={true} smooth={true} duration={500} onClick={closeMobileMenu}><li>Education</li></Link>
             <Link to="projects" activeClass="active" spy={true} smooth={true} duration={500} onClick={closeMobileMenu}><li>Projects</li></Link>
             <Link to="contact" activeClass="active" spy={true} smooth={true} duration={500} onClick={closeMobileMenu}><li>Contact</li></Link>
+            <li className="mobile-chat-item">
+              <button
+                className="nav-chat-button"
+                type="button"
+                onClick={() => {
+                  closeMobileMenu()
+                  onOpenChat()
+                }}
+              >
+                Chat with us
+              </button>
+            </li>
             <li className="mobile-theme-item">
               <button
                 className="theme-toggle"

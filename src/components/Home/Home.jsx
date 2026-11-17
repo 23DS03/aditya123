@@ -80,14 +80,19 @@ useGSAP(()=>{
                
               />
             </div>
-            <button
-              ref={hireButtonRef}
-              type="button"
-              aria-haspopup="dialog"
-              onClick={() => setIsHireDialogOpen(true)}
-            >
-              Hire Me
-            </button>
+            <div className="home-actions">
+              <button
+                ref={hireButtonRef}
+                type="button"
+                aria-haspopup="dialog"
+                onClick={() => setIsHireDialogOpen(true)}
+              >
+                Click here
+              </button>
+              <a className="resume-download" href={`${import.meta.env.BASE_URL}resume/resume.pdf`} download="Aditya-Pathak-Resume.pdf">
+                <span>Resume</span>
+              </a>
+            </div>
 
           </div>
 
@@ -98,17 +103,39 @@ useGSAP(()=>{
             <div className="profile-portrait">
               <img src={adityahome} alt="Portrait of Aditya Pathak" />
             </div>
-            <div className="profile-caption">
-              <h2>Aditya Pathak</h2>
-              <p>Software Engineer</p>
-              <p className="profile-summary">
+          </div>
+        </div>
+        <div className="profile-terminal">
+          <div className="terminal-titlebar">
+            <span className="terminal-controls" aria-hidden="true">
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
+            <span className="terminal-window-name">aditya@portfolio: ~</span>
+          </div>
+          <div className="terminal-body">
+            <p className="terminal-command">
+              
+            </p>
+            <h2>Aditya Pathak</h2>
+            <p className="terminal-field">
+              <span className="terminal-key">role</span>
+              <span className="terminal-value">Software Engineer</span>
+            </p>
+            <p className="terminal-field terminal-about">
+              <span className="terminal-key">about</span>
+              <span className="terminal-value">
                 Computer Science building full-stack web experiences with a data-driven mindset.
-              </p>
-              <span className="availability-label">
+              </span>
+            </p>
+            <p className="terminal-field terminal-status">
+              <span className="terminal-key">status</span>
+              <span className="terminal-value">
                 <span className="availability-dot" aria-hidden="true"></span>
                 Open to opportunities
               </span>
-            </div>
+            </p>
           </div>
         </div>
 
@@ -138,17 +165,16 @@ useGSAP(()=>{
               >
                 Close
               </button>
-              <p className="hire-dialog-eyebrow">SOFTWARE ENGINEER</p>
-              <h2 id="hire-dialog-title">A little about me</h2>
-              <p>A motivated Computer Science and Engineering specializing
+              <p className="hire-dialog-eyebrow">SOFTWARE DEVELOPER</p>
+              <h2 id="hire-dialog-title">Little about me</h2>
+              <p>Computer Science and Engineering specializing
                  in Data Science, with a strong foundation in programming,
                  full-stack web development, and analytical problem-solving.
                  Experienced in building dynamic and responsive web applications
                  using the MERN stack (MongoDB, Express.js, React.js, and Node.js),
                  with working knowledge of JavaScript, and Python. Actively 
                  strengthening problem-solving skills through Data Structures and Algorithms
-                 in C++ while exploring data analytics to extract meaningful insights from 
-                 complex datasets. uting to innovative technology-driven solutions.</p>
+                 in C++ while exploring data analytics to extract meaningful insights.</p>
             </section>
           </div>,
           document.body

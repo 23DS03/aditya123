@@ -1,11 +1,13 @@
 #portfolio-root{
     min-height: 100vh;
-    background: rgb(11, 15, 19);
+    position: relative;
+    isolation: isolate;
+    background: transparent;
     color: antiquewhite;
 }
 
 #portfolio-root[data-theme="light"]{
-    background: #f4f6f8;
+    background: transparent;
     color: #24313c;
 }
 
@@ -42,16 +44,10 @@
 #portfolio-root[data-theme="light"] .about-lead,
 #portfolio-root[data-theme="light"] .portfolio-section-heading h2,
 #portfolio-root[data-theme="light"] .live-writing-heading h2,
-#portfolio-root[data-theme="light"] .media-gallery-heading h2,
-#portfolio-root[data-theme="light"] .profile-caption h2{
+#portfolio-root[data-theme="light"] .media-gallery-heading h2{
     color: #24313c;
 }
 
-#portfolio-root[data-theme="light"] .profile-caption p{
-    color: #52616d;
-}
-
-#portfolio-root[data-theme="light"] .profile-caption p,
 #portfolio-root[data-theme="light"] .about-lead,
 #portfolio-root[data-theme="light"] .about-copy,
 #portfolio-root[data-theme="light"] .portfolio-section-heading > p:last-child,
