@@ -144,6 +144,7 @@
     font-size: .72rem;
     line-height: 1.5;
     overflow-wrap: anywhere;
+    font-family: "Cascadia Code", "SFMono-Regular", Consolas, monospace;
 }
 
 .terminal-prompt,
@@ -161,6 +162,11 @@
     font-size: clamp(1.12rem, 2.2vw, 1.4rem);
     font-weight: 600;
     overflow-wrap: anywhere;
+    font-family: "Cascadia Code", "SFMono-Regular", Consolas, monospace;
+}
+
+.terminal-body h2 *{
+    font-family: inherit;
 }
 
 .terminal-field{
@@ -239,7 +245,7 @@
     width: 140px;
     height: 48px;
     padding: 0 20px;
-    border: 2px solid rgb(202, 124, 21);
+    border: 2px solid var(--button-border);
     border-radius: 999px;
     font: inherit;
     font-size: 0.9em;
@@ -250,34 +256,34 @@
 }
 
 .home-actions button{
-    background-color: rgb(202, 124, 21);
-    color: antiquewhite;
+    background-color: var(--button-bg);
+    color: var(--button-fg);
     cursor: pointer;
 }
 
 .home-actions button:hover{
-    background-color: transparent;
-    color: rgb(202, 124, 21);
+    background-color: var(--button-hover-bg);
+    color: var(--button-fg);
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(202, 124, 21, 0.2);
+    box-shadow: 0 8px 20px var(--button-focus);
 }
 
 .resume-download{
-    background-color: transparent;
-    color: antiquewhite;
+    background-color: var(--button-soft-bg);
+    color: var(--button-secondary-fg);
 }
 
 .resume-download:hover,
 .resume-download:focus-visible{
-    background-color: rgb(202, 124, 21);
-    color: antiquewhite;
+    background-color: var(--button-bg);
+    color: var(--button-fg);
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(202, 124, 21, 0.2);
+    box-shadow: 0 8px 20px var(--button-focus);
 }
 
 .home-actions button:focus-visible,
 .resume-download:focus-visible{
-    outline: 3px solid rgba(202, 124, 21, .5);
+    outline: 3px solid var(--button-focus);
     outline-offset: 3px;
 }
 
@@ -311,16 +317,20 @@
     top: 18px;
     right: 18px;
     padding: 7px 12px;
-    border: 1px solid rgba(250, 235, 215, 0.35);
+    border: 1px solid var(--button-border);
     border-radius: 6px;
-    background-color: transparent;
-    color: antiquewhite;
+    background-color: var(--button-soft-bg);
+    color: var(--button-secondary-fg);
     cursor: pointer;
 }
 
-.hire-dialog-close:hover{
-    border-color: rgb(202, 124, 21);
-    color: rgb(235, 164, 76);
+.hire-dialog-close:hover,
+.hire-dialog-close:focus-visible{
+    border-color: var(--button-border);
+    background-color: var(--button-bg);
+    color: var(--button-fg);
+    outline: 2px solid var(--button-focus);
+    outline-offset: 2px;
 }
 
 .hire-dialog-eyebrow{

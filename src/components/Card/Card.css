@@ -9,7 +9,7 @@
     border-radius: 20px;
     overflow: hidden;
     cursor: pointer;
-    filter: drop-shadow(2px 2px 5px aqua);
+    filter: drop-shadow(2px 2px 5px rgba(211, 160, 79, .22));
     flex-shrink: 0;
     text-align: left;
     color: inherit;
@@ -17,7 +17,7 @@
 }
 
 .card:focus-visible{
-    outline: 3px solid white;
+    outline: 3px solid var(--button-bg);
     outline-offset: 4px;
 }
 
@@ -45,7 +45,7 @@
     inset:0;
     transform:translateY(100%);
     transition:.8s;
-    filter: drop-shadow(2px 2px 8px aqua);
+    filter: drop-shadow(2px 2px 8px rgba(211, 160, 79, .28));
     
 }
 

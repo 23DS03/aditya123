@@ -66,8 +66,8 @@
 .site-footer-links button:hover,
 .site-footer-links a:focus-visible,
 .site-footer-links button:focus-visible{
-    border-color: aqua;
-    color: aqua;
+    border-color: var(--button-secondary-fg);
+    color: var(--button-secondary-fg);
     outline: none;
 }
 
@@ -150,7 +150,7 @@
     height: 36px;
     border: 0;
     border-radius: 50%;
-    background: rgba(0, 255, 255, .1);
+    background: var(--button-soft-bg);
     color: antiquewhite;
     font-size: 1.5rem;
     cursor: pointer;
@@ -158,9 +158,10 @@
 
 .info-dialog-close:hover,
 .info-dialog-close:focus-visible{
-    background: aqua;
-    color: rgb(11, 15, 19);
-    outline: 2px solid antiquewhite;
+    background: var(--button-bg);
+    color: var(--button-fg);
+    outline: 2px solid var(--button-focus);
+    outline-offset: 2px;
 }
 
 @media (max-width: 480px){

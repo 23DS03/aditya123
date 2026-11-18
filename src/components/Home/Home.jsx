@@ -116,9 +116,18 @@ useGSAP(()=>{
           </div>
           <div className="terminal-body">
             <p className="terminal-command">
-              
+              <span className="terminal-prompt" aria-hidden="true">$</span>
+              C:\users\adityapathak\desktop  cd..
             </p>
-            <h2>Aditya Pathak</h2>
+            <h2 aria-label="Aditya Pathak">
+              <TypeAnimation
+                sequence={["Aditya Pathak", 2000]}
+                speed={40}
+                repeat={Infinity}
+                cursor='|'
+                aria-hidden="true"
+              />
+            </h2>
             <p className="terminal-field">
               <span className="terminal-key">role</span>
               <span className="terminal-value">Software Engineer</span>

@@ -1,3 +1,23 @@
+:root{
+    --button-bg: #d3a04f;
+    --button-hover-bg: #e2b363;
+    --button-fg: #1c2328;
+    --button-border: #b47b28;
+    --button-focus: rgba(211, 160, 79, .45);
+    --button-soft-bg: rgba(211, 160, 79, .12);
+    --button-secondary-fg: #efc57d;
+}
+
+:root[data-theme="light"]{
+    --button-bg: #c58a35;
+    --button-hover-bg: #ad7425;
+    --button-fg: #1c2328;
+    --button-border: #9c671d;
+    --button-focus: rgba(156, 103, 29, .38);
+    --button-soft-bg: rgba(156, 103, 29, .09);
+    --button-secondary-fg: #80530e;
+}
+
 #portfolio-root{
     min-height: 100vh;
     position: relative;
@@ -32,6 +52,34 @@
     border-color: rgba(36, 49, 60, .24);
     background: #fff;
     color: #24313c;
+}
+
+#portfolio-root[data-theme="light"] .theme-toggle:hover,
+#portfolio-root[data-theme="light"] .theme-toggle:focus-visible{
+    border-color: var(--button-border);
+    background: var(--button-soft-bg);
+}
+
+#portfolio-root[data-theme="light"] .site-footer-links a:hover,
+#portfolio-root[data-theme="light"] .site-footer-links button:hover,
+#portfolio-root[data-theme="light"] .site-footer-links a:focus-visible,
+#portfolio-root[data-theme="light"] .site-footer-links button:focus-visible{
+    border-color: var(--button-secondary-fg);
+    color: var(--button-secondary-fg);
+}
+
+#portfolio-root[data-theme="light"] .project-details-close:hover,
+#portfolio-root[data-theme="light"] .project-details-close:focus-visible{
+    border-color: var(--button-border);
+    background: var(--button-bg);
+    color: var(--button-fg);
+}
+
+#portfolio-root[data-theme="light"] .portfolio-chat-suggestions button:hover,
+#portfolio-root[data-theme="light"] .portfolio-chat-suggestions button:focus-visible{
+    border-color: var(--button-border);
+    background: var(--button-soft-bg);
+    color: var(--button-secondary-fg);
 }
 
 #portfolio-root[data-theme="light"] .ham{
@@ -175,9 +223,9 @@
 }
 
 #portfolio-root[data-theme="light"] .project-details-close{
-    border-color: rgba(36, 49, 60, .22);
-    background: #f4f6f8;
-    color: #24313c;
+    border-color: var(--button-border);
+    background: var(--button-soft-bg);
+    color: var(--button-secondary-fg);
 }
 
 #portfolio-root[data-theme="light"] .hire-dialog,
@@ -194,9 +242,9 @@
 
 #portfolio-root[data-theme="light"] .hire-dialog-close,
 #portfolio-root[data-theme="light"] .about-dialog-close{
-    border-color: rgba(36, 49, 60, .22);
-    background: #f4f6f8;
-    color: #24313c;
+    border-color: var(--button-border);
+    background: var(--button-soft-bg);
+    color: var(--button-secondary-fg);
 }
 
 #portfolio-root[data-theme="light"] .about-dialog > p:last-child{
@@ -229,15 +277,15 @@
 }
 
 #portfolio-root[data-theme="light"] #btn{
-    border-color: rgb(165, 95, 17);
-    background: rgb(202, 124, 21);
-    color: #fff;
+    border-color: var(--button-border);
+    background: var(--button-bg);
+    color: var(--button-fg);
 }
 
 #portfolio-root[data-theme="light"] #btn:hover{
-    border-color: rgb(139, 76, 10);
-    background: rgb(175, 99, 12);
-    color: #fff;
+    border-color: var(--button-border);
+    background: var(--button-hover-bg);
+    color: var(--button-fg);
 }
 
 #portfolio-root[data-theme="light"] .site-footer{

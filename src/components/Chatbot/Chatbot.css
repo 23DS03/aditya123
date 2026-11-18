@@ -167,10 +167,10 @@
     align-items: center;
     gap: 6px;
     padding: 7px 10px;
-    border: 1px solid rgba(245, 174, 81, 0.35);
+    border: 1px solid var(--button-border);
     border-radius: 8px;
-    background: rgba(202, 124, 21, 0.1);
-    color: #f0b460;
+    background: var(--button-soft-bg);
+    color: var(--button-secondary-fg);
     font-size: 0.78rem;
     font-weight: 600;
     cursor: pointer;
@@ -184,7 +184,8 @@
 }
 
 .portfolio-chat-action:hover{
-    color: #ffd293;
+    background: var(--button-bg);
+    color: var(--button-fg);
 }
 
 .portfolio-chat-suggestions{
@@ -207,8 +208,9 @@
 }
 
 .portfolio-chat-suggestions button:hover{
-    border-color: rgba(245, 174, 81, 0.65);
-    color: #ffd293;
+    border-color: var(--button-border);
+    background: var(--button-soft-bg);
+    color: var(--button-secondary-fg);
 }
 
 .portfolio-chat-input{
@@ -246,18 +248,18 @@
     width: 40px;
     height: 40px;
     border-radius: 8px;
-    background: #bd761f;
-    color: #fffaf3;
+    background: var(--button-bg);
+    color: var(--button-fg);
 }
 
 .portfolio-chat-input button:disabled{
-    background: #38434a;
+    background: rgba(111, 124, 132, .42);
     color: rgba(244, 238, 229, 0.4);
     cursor: not-allowed;
 }
 
 .portfolio-chat-input button:not(:disabled):hover{
-    background: #d68b2d;
+    background: var(--button-hover-bg);
 }
 
 .portfolio-chat-input button svg{
@@ -277,17 +279,17 @@
     z-index: 61;
     width: 58px;
     height: 58px;
-    border: 1px solid rgba(255, 221, 174, 0.55);
+    border: 1px solid var(--button-border);
     border-radius: 50%;
-    background: #bd761f;
-    color: #fffaf3;
+    background: var(--button-bg);
+    color: var(--button-fg);
     box-shadow: 0 8px 26px rgba(0, 0, 0, 0.38);
     transition: transform 180ms ease, background-color 180ms ease;
 }
 
 .portfolio-chat-toggle:hover{
     transform: translateY(-2px);
-    background: #d68b2d;
+    background: var(--button-hover-bg);
 }
 
 .portfolio-chat-toggle svg{
@@ -301,7 +303,7 @@
 }
 
 .portfolio-chat-widget button:focus-visible{
-    outline: 2px solid #ffe0b5;
+    outline: 2px solid var(--button-bg);
     outline-offset: 3px;
 }
 

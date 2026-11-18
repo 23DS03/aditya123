@@ -191,10 +191,10 @@
     width: 100px;
     min-height: 50px;
     padding: 0;
-    border: 1px solid rgb(202, 124, 21);
+    border: 1px solid var(--button-border);
     border-radius: 20px;
-    background-color: rgb(202, 124, 21);
-    color: #fffaf3;
+    background-color: var(--button-bg);
+    color: var(--button-fg);
     font-weight: 600;
     cursor: pointer;
     transition: background-color .2s ease, border-color .2s ease, color .2s ease, transform .2s ease;
@@ -202,13 +202,13 @@
 
 #btn:hover{
     transform: translateY(-2px);
-    border-color: rgb(235, 164, 76);
-    background-color: rgb(175, 99, 12);
-    color: #fff;
+    border-color: var(--button-border);
+    background-color: var(--button-hover-bg);
+    color: var(--button-fg);
 }
 
 #btn:focus-visible{
-    outline: 3px solid rgba(0, 255, 255, .55);
+    outline: 3px solid var(--button-focus);
     outline-offset: 3px;
 }
 

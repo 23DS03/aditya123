@@ -175,15 +175,21 @@
     display: block;
     margin-left: auto;
     padding: 7px 12px;
-    border: 1px solid rgba(255, 255, 255, .45);
-    border-radius: 4px;
-    background: #11191e;
-    color: white;
+    border: 1px solid var(--button-border);
+    border-radius: 8px;
+    background: var(--button-soft-bg);
+    color: var(--button-secondary-fg);
     cursor: pointer;
 }
 
+.project-details-close:hover,
 .project-details-close:focus-visible{
-    outline: 2px solid aqua;
+    background: var(--button-bg);
+    color: var(--button-fg);
+}
+
+.project-details-close:focus-visible{
+    outline: 2px solid var(--button-focus);
     outline-offset: 3px;
 }
 
